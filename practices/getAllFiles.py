@@ -15,5 +15,11 @@ def getAllFiles(path):
             allFiles.append(fullFileName)
     return allFiles
 
+def getAllFilesByWalk(path):
+    for root, dirs, files in os.walk(path):
+        for filePath in files:
+            print os.path.join(root, filePath)
+
 if __name__ == '__main__':
-    print getAllFiles('.')
+    #print getAllFiles('.')
+    getAllFilesByWalk('..')
